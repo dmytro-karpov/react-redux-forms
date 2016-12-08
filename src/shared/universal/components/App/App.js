@@ -4,6 +4,7 @@ import React from 'react';
 import { Match, Miss } from 'react-router';
 import Helmet from 'react-helmet';
 import { CodeSplit } from 'code-split-component';
+import '@blueprintjs/core/dist/blueprint.css';
 import 'normalize.css/normalize.css';
 import './globals.css';
 import Error404 from './Error404';
@@ -61,10 +62,28 @@ function App() {
       />
 
       <Match
+        pattern="/posts"
+        render={routerProps =>
+          <CodeSplit chunkName="posts" modules={{ Posts: require('./Posts') }}>
+            { ({ Posts }) => Posts && <Posts {...routerProps} /> }
+          </CodeSplit>
+        }
+      />
+
+      <Match
         pattern="/about"
         render={routerProps =>
           <CodeSplit chunkName="about" modules={{ About: require('./About') }}>
             { ({ About }) => About && <About {...routerProps} /> }
+          </CodeSplit>
+        }
+      />
+
+      <Match
+        pattern="/form"
+        render={routerProps =>
+          <CodeSplit chunkName="form" modules={{ Form: require('./Form') }}>
+            { ({ Form }) => Form && <Form {...routerProps} /> }
           </CodeSplit>
         }
       />

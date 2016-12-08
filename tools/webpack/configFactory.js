@@ -408,6 +408,7 @@ function webpackConfigFactory({ target, mode }, { json }) {
               'transform-es2015-destructuring',
               // The class properties plugin is really useful for react components.
               'transform-class-properties',
+              'transform-function-bind',
               // This plugin transpiles the code-split-component component
               // instances, taking care of all the heavy boilerplate that we
               // would have had to do ourselves to get code splitting w/SSR

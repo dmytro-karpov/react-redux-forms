@@ -5,9 +5,9 @@ A significant update is being prepared in the [`next`](https://github.com/ctrlpl
 ---
 
 <p align='center'>
-  <h1 align='center'>React, Universally</h1>
+  <h1 align='center'>React Redux, Universally</h1>
   <p align='center'><img width='150' src='https://raw.githubusercontent.com/ctrlplusb/assets/master/logos/react-universally.png' /></p>
-  <p align='center'>A starter kit giving you the minimum requirements for a production ready universal react application.</p>
+  <p align='center'>A starter kit giving you the minimum requirements for a production ready universal react redux application.</p>
 </p>
 
 ## TOC
@@ -29,7 +29,9 @@ A significant update is being prepared in the [`next`](https://github.com/ctrlpl
 
 ## About
 
-This starter kit contains all the build tooling and configuration you need to kick off your next universal react project, whilst containing a minimal "project" set up allowing you to make your own architecture decisions (redux/mobx etc).
+This is the `redux` branch of the `react-universally` starter kit.
+
+It provides you with the build tooling and configuration you need to kick off your next universal react redux project.
 
 > __NEW!__ If you really want an example of a data library integration along with an example of how to go about solving data prefetching for the server then feel free to take a look at the [`redux`](https://github.com/ctrlplusb/react-universally/tree/redux) branch which provides exactly this.
 
@@ -42,6 +44,7 @@ This starter kit contains all the build tooling and configuration you need to ki
   - 🚄 `express` server.
   - 👮 Security on the `express` server using `helmet` and `hpp`.
   - 👀 `react` as the view.
+  - ⚛ `redux` as the data store.
   - 🔀 `react-router` v4 as the router.
   - ⛑ `react-helmet` allowing control of the page title/meta/styles/scripts from within your components. Direct control for your SEO needs.
   - 🖌 Very basic CSS support - it's up to you to extend it into CSS Modules, SASS, PostCSS, Aphrodite etc.
@@ -62,9 +65,7 @@ This starter kit contains all the build tooling and configuration you need to ki
 
 ## Overview
 
-Redux/MobX, data persistence, test frameworks, and all the other bells and whistles have been explicitly excluded from this boilerplate.  It's up to you to decide what technologies you would like to add to your own implementation based upon your own needs, this boilerplate simply serves as a clean base upon which to do so.
-
-> __NEW!__ If you really want an example of a data library integration along with an example of how to go about solving data prefetching for the server then feel free to take a look at the [`redux`](https://github.com/ctrlplusb/react-universally/tree/redux) branch which provides exactly this.
+Redux is used as the data management layer, along with a basic implementation of a data prefetching feature, allowing you to populate your redux store before doing server side rendering.
 
 This boilerplate uses Webpack 2 to produce bundles for both the client, the
 server, and the middleware that the server will use to support SSR rendering of the React application.  You will notice the following Webpack configuration files:
@@ -183,6 +184,9 @@ Even though we are using webpack to support our universal application we keep th
   - `helmet` - Provides a content security policy for express.
   - `hpp` - Express middleware to protect against HTTP Parameter Pollution attacks.
   - `react` - A declarative, efficient, and flexible JavaScript library for building user interfaces.
+  - `redux` - Data layer.
+  - `react-redux` - Redux bindings for react.
+  - `redux-thunk` - Allow thunked coordination of multiple redux action executions.
   - `react-dom` - React support for the DOM.
   - `react-helmet` - Control the page header from your components.
   - `react-router` - A complete routing library for React.
