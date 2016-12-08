@@ -3,6 +3,7 @@
 import { combineReducers } from 'redux';
 import type { Reducer } from 'redux';
 import type { Action } from '../types/redux';
+import { reducer as formReducer } from 'redux-form';
 
 import posts, * as FromPosts from './posts';
 import type { State as PostsState } from './posts';
@@ -19,6 +20,7 @@ export type State = {
 
 const rootReducer: Reducer<State, Action> = combineReducers({
   posts,
+  form: formReducer,
 });
 
 // -----------------------------------------------------------------------------

@@ -1,0 +1,12 @@
+.form-page .pt-menu {
+  display: inline-block;
+}
+
+.form-page .pt-menu li {
+    margin: 0;
+}
+
+.form-page .form {
+  display: inline-block;
+  padding: 15px
+}

@@ -1,3 +1,9 @@
+## NOTE
+
+A significant update is being prepared in the [`next`](https://github.com/ctrlplusb/react-universally/tree/next) branch.  It contains a lot of improvements and is not far off from being ready.  If you are considering on using this project as a base for your own work I would consider that you monitor this project and use the next version as soon as it is published to the master branch.
+
+---
+
 <p align='center'>
   <h1 align='center'>React Redux, Universally</h1>
   <p align='center'><img width='150' src='https://raw.githubusercontent.com/ctrlplusb/assets/master/logos/react-universally.png' /></p>
@@ -111,7 +117,7 @@ You may find CSPs annoying at first, but it is a great habit to build. The CSP c
 
 ## Progressive Web Application Ready
 
-We make use of the [`sw-precache-webpack-plugin`](https://github.com/goldhand/sw-precache-webpack-plugin), providing you with a service worker to bridge that gap into a progressive web application that has aggressive caching and offline support.
+We make use of the [`offline-plugin`](https://github.com/NekR/offline-plugin), providing you with a service worker to bridge that gap into a progressive web application that has aggressive caching and simple offline support.
 
 ## Extensions
 
@@ -172,7 +178,7 @@ If you do building on your production environment you must ensure that you have 
 Even though we are using webpack to support our universal application we keep the webpack runtime out of our production runtime environment.  Everything is prebundled in prep for production execution.  Therefore we only have the following runtime dependencies:
 
   - `node` v6
-  - `app-root-path` - Gives us the ability to easily resolve files from the root of our app.
+  - `app-root-dir` - Gives us the ability to easily resolve files from the root of our app.
   - `compression` - Gzip compression support for express server responses.
   - `express` - Web server.
   - `helmet` - Provides a content security policy for express.
